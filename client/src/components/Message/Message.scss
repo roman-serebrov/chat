@@ -1,0 +1,97 @@
+.message {
+    $self: &;
+    display: flex;
+    margin-bottom: 15px;
+    &__avatar {
+        display: flex;
+        flex-direction: column-reverse;
+        img {
+            display: block;
+            border-radius: 100%;
+            width: 33px;
+            height: 33px;
+            margin-right: 13px;
+            margin-bottom: 23px;
+        }
+        
+    }
+    &__content {
+        #{$self}__bubble {
+            max-width: 440px;
+            word-wrap:break-word;
+            background: #3674ff;
+            box-shadow: 0px 5px 5px rgba(54, 116, 255, 0.196733);
+            border-radius: 12px 12px 12px 0px;
+            padding: 7px;
+            &__text {
+                color: #fff;
+                margin: 0;
+                line-height: 25px;
+            }
+        }
+        #{$self}__date {
+            font-size: 12px;
+            opacity: 0.4;
+
+        } 
+    }
+    &__attachments {
+        display: flex;
+        align-items: flex-end;
+        margin: 2px 2px;
+    }
+    &__is--typing {
+        #{$self}__bubble {
+            background: #cadaff;
+        } 
+    }
+    &__attachment--item {
+        cursor: pointer;
+        img {
+            width: 45px;
+            height: 45px;
+            border-radius: 12px;
+            padding: 2px;
+        }
+    }
+
+    &__me {
+        display: flex;
+        flex-direction: row-reverse;
+        #{$self}__content {
+            #{$self}__bubble {
+                background: #fff;
+                border: 1px solid #ececec;
+                border-radius: 12px 12px 0px 12px;
+                #{$self}__text {
+                    color: black;
+                }
+            }
+            #{$self}__date {
+                width: 100%;
+                display: inline-block;
+                text-align: right;
+            }
+        }
+        #{$self}__check__info {
+            display: flex;
+            align-items: center;
+        }
+        
+        #{$self}__avatar {
+           display: flex;
+           align-items: flex-end;
+            img {
+                margin-right: 0;
+                margin-left: 13px;
+            }
+        }
+    }
+}
+
+
+// .message__is--typing {
+//     .message__bubble {
+//         background: #cadaff;
+//     } 
+// }

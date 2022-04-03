@@ -17,11 +17,14 @@
         font-weight: 500;
         height: 40px !important;
     }
-    .reg__button {
+    .auth__register--link {
         display: block;
-        text-align: right;
+        text-align: left;
         opacity: 0.5;
         color: #202020;
+        &:hover {
+            color: blue;
+        }
     }
     .ant-form-item-control {
         width: 100%;

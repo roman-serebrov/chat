@@ -1,18 +1,18 @@
 import React, { useState } from 'react';
-import { Form, Icon, Input} from "antd";
-import { Block, Button } from "../../../components/index"
-import { Link } from "react-router-dom";
+import { Form} from "antd";
+import { Button, FormField, Block } from "../../../components/index"
 import { CheckCircleTwoTone } from '@ant-design/icons';
-
-const RegisterForm = () => {
-    const [form] = Form.useForm();
+import { Link } from 'react-router-dom';
+const RegisterForm = (props) => {
+    const {
+        values,
+        touched,
+        errors,
+        handleChange,
+        handleBlur,
+        handleSubmit,
+      } = props;
     const [success, setSuccess] = useState(false);
-
-    const onFinish = (values) => {
-        console.log('Received values of form: ', values);
-        setSuccess(!success);
-    };
-
 // const [autoCompleteResult, setAutoCompleteResult] = useState>([]);
 
     
@@ -32,40 +32,67 @@ const RegisterForm = () => {
                 На Вашу почту отправленно письмо с сылкой на подтверждение регистрации.
             </div>
             </div> : 
+        <Block>
         <Form
-        form={form}
-        name="register"
-        onFinish={onFinish}
-        initialValues={{
-            residence: ['zhejiang', 'hangzhou', 'xihu'],
-            prefix: '86',
-        }}
-        scrollToFirstError
+        onSubmit={handleSubmit}
+        className="login-form"
         >
-        <Form.Item>
-            <Input placeholder="Email"/>
-        </Form.Item>
-
-        <Form.Item        >
-            <Input.Password placeholder="password"/>
-        </Form.Item>
-
-        <Form.Item>
-            <Input.Password placeholder="confirm password"/>
-        </Form.Item>
-
-        <Form.Item        >
-            <Input placeholder="nickname"/>
-        </Form.Item>
-        <Form.Item wrapperCol={{ offset: 8, span: 16 }}>
-            <Button type="primary" htmlType="submit" size="large">
-                Зарегестировать аккунт
-            </Button>
-        </Form.Item>
-        <Form.Item>
-                <Link to="register">Войти</Link>
-        </Form.Item>
+        <FormField
+            name="fullname"
+            icon="user"
+            placeholder="Ваше имя и фамилия"
+            handleChange={handleChange}
+            handleBlur={handleBlur}
+            touched={touched}
+            errors={errors}
+            values={values}
+        />
+        <FormField
+              name="email"
+              icon="email"
+              placeholder="E-Mail"
+              handleChange={handleChange}
+              handleBlur={handleBlur}
+              touched={touched}
+              errors={errors}
+              values={values}
+            />
+            <FormField
+              name="password"
+              icon="lock"
+              placeholder="Пароль"
+              type="password"
+              handleChange={handleChange}
+              handleBlur={handleBlur}
+              touched={touched}
+              errors={errors}
+              values={values}
+            />
+            <FormField
+              name="password_2"
+              icon="lock"
+              placeholder="Повторите пароль"
+              type="password"
+              handleChange={handleChange}
+              handleBlur={handleBlur}
+              touched={touched}
+              errors={errors}
+              values={values}
+            />
+             <Form.Item>
+              <Button
+                onClick={handleSubmit}
+                type="primary"
+                size="large"
+              >
+                Зарегистрироваться
+              </Button>
+            </Form.Item>
+            <Link className="auth__register-link" to="/signin">
+              Войти в аккаунт
+            </Link>
         </Form>
+        </Block>
         }
         </div>
     );
