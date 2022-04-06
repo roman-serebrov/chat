@@ -3,3 +3,7 @@ export { default as Block } from "./Block";
 export { default as Message } from "./Message";
 export { default as FormField } from "./FormFiled";
 export { default as Typing } from "./Typing";
+export { default as ImgInMessage } from "./ImgInMessage";
+export { default as DialogItem } from "./DialogItem";
+export { default as TimeMessage } from "./TimeMessage";
+export { default as IsReadeMessage } from "./IsReadeMessage";

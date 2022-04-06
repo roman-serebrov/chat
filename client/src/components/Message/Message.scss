@@ -54,6 +54,18 @@
             padding: 2px;
         }
     }
+    &__attachment--item--one {
+        cursor: pointer;
+        img {
+            width: 145px;
+            height: 145px;
+            border-radius: 12px;
+            padding: 2px;
+        }
+    }
+    &__check {
+        text-align: end;
+    }
 
     &__me {
         display: flex;
@@ -77,6 +89,7 @@
             display: flex;
             align-items: center;
         }
+        
         
         #{$self}__avatar {
            display: flex;
