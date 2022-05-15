@@ -5,29 +5,48 @@
     &__avatar {
         display: flex;
         flex-direction: column-reverse;
+        align-items: flex-start;
         img {
             display: block;
             border-radius: 100%;
             width: 33px;
             height: 33px;
-            margin-right: 13px;
-            margin-bottom: 23px;
+            margin-right: 0px;
         }
         
     }
+    &__block--text {
+        display: flex;
+        flex-basis: 100%;
+        justify-content: end;
+    }
+    &__type {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: end;
+    }
+    &__text {
+        color: #fff;
+        margin: 0;
+        line-height: 25px;
+    }
     &__content {
+        display: flex;
+        flex-direction: column;
+        align-items: self-start;
         #{$self}__bubble {
-            max-width: 440px;
+            position: relative;
             word-wrap:break-word;
-            background: #3674ff;
+            background: gray;
             box-shadow: 0px 5px 5px rgba(54, 116, 255, 0.196733);
             border-radius: 12px 12px 12px 0px;
-            padding: 7px;
-            &__text {
-                color: #fff;
-                margin: 0;
-                line-height: 25px;
-            }
+            padding: 12px; 
+            max-width: 440px;
+            min-width: 60px;
+            min-height: 20px;
+            border-radius: 12px 12px 12px 0px;
+            padding: 5px;
+            display: block;
         }
         #{$self}__date {
             font-size: 12px;
@@ -38,6 +57,7 @@
     &__attachments {
         display: flex;
         align-items: flex-end;
+        justify-content: center;
         margin: 2px 2px;
     }
     &__is--typing {
@@ -47,6 +67,8 @@
     }
     &__attachment--item {
         cursor: pointer;
+        margin-top: auto;
+        display: flex;
         img {
             width: 45px;
             height: 45px;
@@ -65,18 +87,28 @@
     }
     &__check {
         text-align: end;
+        
+    }
+    &__check__info {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        align-self: end;
     }
 
     &__me {
         display: flex;
         flex-direction: row-reverse;
         #{$self}__content {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
             #{$self}__bubble {
-                background: #fff;
+                background: rgb(6, 99, 238);
                 border: 1px solid #ececec;
                 border-radius: 12px 12px 0px 12px;
                 #{$self}__text {
-                    color: black;
+                    color: fff;
                 }
             }
             #{$self}__date {
@@ -87,24 +119,20 @@
         }
         #{$self}__check__info {
             display: flex;
-            align-items: center;
+            flex-direction: row-reverse;
+            justify-content: flex-end;
+            align-self: baseline;
         }
         
         
         #{$self}__avatar {
            display: flex;
            align-items: flex-end;
+           
             img {
                 margin-right: 0;
-                margin-left: 13px;
+                margin-left: 0px;
             }
         }
     }
 }
-
-
-// .message__is--typing {
-//     .message__bubble {
-//         background: #cadaff;
-//     } 
-// }

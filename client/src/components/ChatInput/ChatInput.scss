@@ -1,0 +1,26 @@
+.chat__message--input {
+    border: 1px solid #ddd;
+    display: flex;
+    column-gap: 20px;
+    align-items: center;
+    position: fixed;
+    bottom: 1px;
+    background: #fff;
+    z-index: 10;
+    left: 340px;
+    transform: translateX(0%);
+    width: calc(100% - 340px);
+    padding: 5px 10px;
+    &--block {
+        width: 400px;
+    }
+
+    &--smile--btn, &--camera, &--audio, &--send {
+        opacity: 0.5;
+        transition: opacity 0.15s ease-in-out;
+        &:hover {
+            opacity: 1;
+            color: #0663ee
+        }
+    }
+}

@@ -11,7 +11,6 @@ export default ({isAuth, values, errors}) => {
             }
         },
         password: value => {
-            console.log('ps',  '' == value)
              if(!value) {
                 errors.password = 'Введите пароль!'
             } else if (!isAuth && 
